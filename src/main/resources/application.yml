@@ -3,7 +3,8 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ecole
     username: postgres
-    password: root
+    password: Tec#nosk1llZ
+    #password: root
   jpa:
     hibernate:
       ddl-auto: create-drop

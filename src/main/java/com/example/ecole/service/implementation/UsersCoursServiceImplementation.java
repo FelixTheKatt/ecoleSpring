@@ -103,4 +103,15 @@ public class UsersCoursServiceImplementation implements UserCoursService {
         this.userCoursRepository.save(userCours);
         return this.userCoursMapper.toDto(userCours);
     }
+
+    @Override
+    public List<UserCoursDto> findAllByStudent(Long id) {
+
+        return this.userCoursRepository
+                .findAllByUserId(id)
+                .stream()
+                .map(userCoursMapper::toDto)
+                .collect(Collectors.toList());
+
+    }
 }

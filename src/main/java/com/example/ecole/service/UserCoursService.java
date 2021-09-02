@@ -19,4 +19,6 @@ public interface UserCoursService {
     Boolean delete(long id);
 
     UserCoursDto update(long id, UserCoursForm form);
+
+    List<UserCoursDto> findAllByStudent(Long id);
 }

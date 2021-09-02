@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "usersCours")
+@RequestMapping(path = "users-cours")
 public class UserCoursController {
     private final UserCoursService userCoursService;
 
@@ -29,6 +29,12 @@ public class UserCoursController {
     @GetMapping(path = "/{id}")
     public ResponseEntity<UserCoursDto> getOne(@PathVariable(name = "id") long id) {
         return ResponseEntity.ok(this.userCoursService.getOne(id));
+    }
+
+    @GetMapping(path = "/student/{id}")
+    public ResponseEntity<List<UserCoursDto>> findAllByStudent(@PathVariable Long id){
+
+        return ResponseEntity.ok(this.userCoursService.findAllByStudent(id));
     }
 
     @PostMapping()
